@@ -21,16 +21,16 @@ number_of_folder_names = len(folder_names) # Counts how many types of files are 
 for loop in range(0, number_of_folder_names):
     if not os.path.exists(path + folder_names[loop]): # Checks if folder exists in path
         os.makedirs(path + folder_names[loop])        # Creates new folder in path
+        print("Folder created successfully!")         # Notifies the user that it has successfully created a folder
         
 # Check and move the files to their corresponding folders
- 
 for file in file_name: # Note: You can add extra "elif" for whatever type of files you have in the path, 
                        # or if you want to sort only specific files
     
     # Check and move .docx files
     if ".docx" in file and not os.path.exists(path + "Doc Files/" + file):
         shutil.move(path +  file,path + "Doc Files/" + file)
-        
+                
     # Check and move .xlsx files
     elif ".xlsx" in file and not os.path.exists(path + "Excel Files/" + file):
         shutil.move(path +  file,path + "Excel Files/" + file)
